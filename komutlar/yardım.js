@@ -1,0 +1,37 @@
+const Discord = require('discord.js');
+const ayarlar = require('../ayarlar.json');
+
+exports.run = (client, message, args) => {
+  
+const embed = new Discord.MessageEmbed()
+
+.setTitle(`${client.user.username} - Komutlar`)
+
+.setColor('GREEN')
+
+.setDescription(`**${ayarlar.prefix}genel** Genel Komutları gösterir.\n **${ayarlar.prefix}kullanıcı** Kullanıcı Komutlarını Gösterir.\n **${ayarlar.prefix}moderasyon**  Moderasyon Komutlarını Gösterir.\n **${ayarlar.prefix}moderasyon2**  Moderasyon Komutlarını Gösterir.\n **${ayarlar.prefix}kayıt-sistemi** Kayıt Sistemi Komutlarını Gösterir.\n **${ayarlar.prefix}ekonomi** Ekonomi Komutlarını Gösterir.\n`) 
+
+.addField(`» Linkler`, `[Bot Davet Linki](https://is.gd/uJrIQn) **|** [Destek Sunucusu](https://discord.gg/QfDqqDG)`)
+
+.setThumbnail(client.user.avatarURL)
+
+.setImage("https://cdn.discordapp.com/attachments/762351575750148117/762354520608473128/Ejderha.jpg")  
+
+.setFooter(`${message.author.username} Tarafından İstendi.`, message.author.avatarURL)
+
+return message.channel.send(embed)
+  
+};
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ['mod'],
+  permLevel: 0,
+};
+
+exports.help = {
+  name: 'yardım',
+  description: '',
+  usage: ''
+};
